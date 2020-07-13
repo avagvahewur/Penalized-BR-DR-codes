@@ -34,6 +34,7 @@ crossval<-function(r, x, nf=5, nstep=10, wstart=lam)
 {
   region<-wstart+(-nstep/2+3):(nstep/2+2)*wstart/nstep
   N<-length(r)
+  p<-dim(x)[2]
   winsize<-(N-N%%nf)/nf
   windows<-c(rep(winsize,nf-1),winsize+N%%nf)
   CV<-rep(0,nstep)
